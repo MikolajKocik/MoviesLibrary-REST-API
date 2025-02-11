@@ -1,0 +1,45 @@
+# Pliki tymczasowe i pliki kompilacji
+*.obj
+*.o
+*.exe
+*.dll
+*.pdb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.tmp
+*.tmp*
+*.log
+*.log*
+
+# Foldery kompilacji
+bin/
+obj/
+Debug/
+Release/
+
+# Pliki specyficzne dla Visual Studio
+.vs/
+*.csproj.user
+*.vcxproj.user
+*.fsproj.user
+*.vbproj.user
+*.suo
+*.sdf
+
+# Pliki NuGet
+packages/
+
+# Pliki testowe
+TestResults/
+*.trx
+
+# Pliki konfiguracyjne
+*.config
+*.ini
+*.json
+
+# Pliki lokalne
+.env
+secrets.json
