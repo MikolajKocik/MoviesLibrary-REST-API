@@ -4,7 +4,7 @@ This repository contains a simple Movies Library management application built us
 
 ## How to Run
 
-First of all, use git clone to copy the repository:
+Copy the repository:
 
 ```bash
 https://github.com/MikolajKocik/MoviesLibrary-REST-API.git
@@ -37,8 +37,8 @@ To update the database, you can also simply run:
   - Open the Windows Forms project in Visual Studio.
     
 2. Build and Run
-   Build and run the application.
-   
+   Run the application, you can press 'F5' or click on button
+  
    You can also run the project in console:
    ```bash
    dotnet run
