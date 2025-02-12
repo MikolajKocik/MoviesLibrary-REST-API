@@ -1,4 +1,5 @@
 using MoviesLibraryWinForms.Models;
+using System.Configuration;
 using System.Net.Http.Json;
 
 namespace MoviesLibraryWinForms
@@ -6,7 +7,7 @@ namespace MoviesLibraryWinForms
     public partial class Form1 : Form
     {
         private readonly HttpClient _httpClient;
-        private const string ApiUrl = "https://localhost:7295/api/movies"; // connect with API 
+        private string ApiUrl = ConfigurationManager.AppSettings["MoviesLibraryAPI:BaseUrl"]!; // connect with API 
 
         /// <summary>
         /// Initializes HttpClient and setup for edit/delete buttons 
