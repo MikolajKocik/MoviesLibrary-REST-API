@@ -8,6 +8,9 @@ namespace MoviesLibraryWinForms
         private readonly HttpClient _httpClient;
         private const string ApiUrl = "https://localhost:7295/api/movies"; // connect with API 
 
+        /// <summary>
+        /// Initializes HttpClient and setup for edit/delete buttons 
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -15,6 +18,10 @@ namespace MoviesLibraryWinForms
             _httpClient = new HttpClient();
         }
 
+        /// <summary>
+        /// Allows to load data from LoadMoviesAsync method
+        /// </summary>
+        
         private async void Form1_Load(object sender, EventArgs e)
         {
             await LoadMoviesAsync();
