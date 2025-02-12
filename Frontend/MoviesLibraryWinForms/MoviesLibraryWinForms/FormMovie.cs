@@ -11,6 +11,14 @@ namespace MoviesLibraryWinForms
             Movie = new Movie();
         }
 
+        public FormMovie(Movie movie) : this()
+        {
+            Movie = movie;
+            txtTitle.Text = movie.Title;
+
+        }
+
+
 
     }
 }

@@ -28,12 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormMovie";
+            txtTitle = new TextBox();
+            txtYear = new TextBox();
+            lblTitle = new Label();
+            lblYear = new Label();
+            SuspendLayout();
+            // 
+            // txtTitle
+            // 
+            txtTitle.Location = new Point(30, 71);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(356, 23);
+            txtTitle.TabIndex = 2;
+            // 
+            // txtYear
+            // 
+            txtYear.Location = new Point(30, 164);
+            txtYear.Name = "txtYear";
+            txtYear.Size = new Size(73, 23);
+            txtYear.TabIndex = 3;
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            lblTitle.Location = new Point(30, 25);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(60, 32);
+            lblTitle.TabIndex = 4;
+            lblTitle.Text = "Title";
+            // 
+            // lblYear
+            // 
+            lblYear.AutoSize = true;
+            lblYear.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            lblYear.Location = new Point(30, 117);
+            lblYear.Name = "lblYear";
+            lblYear.Size = new Size(58, 32);
+            lblYear.TabIndex = 5;
+            lblYear.Text = "Year";
+            // 
+            // FormMovie
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(418, 283);
+            Controls.Add(lblYear);
+            Controls.Add(lblTitle);
+            Controls.Add(txtYear);
+            Controls.Add(txtTitle);
+            Name = "FormMovie";
+            Text = "FormMovie";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+        private TextBox txtTitle;
+        private TextBox txtYear;
+        private Label lblTitle;
+        private Label lblYear;
     }
 }
