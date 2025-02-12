@@ -18,9 +18,9 @@ https://github.com/MikolajKocik/MoviesLibrary-REST-API.git
 1. **Open the API Project**
   - Open the API project in Visual Studio.
   - Open the NuGet Package Manager Console (Tools > NuGet Package Manager > Package Manager Console) and run the following command:
-    ```bash
-    Update-database
-    ```   
+   ```bash
+   Update-database
+   ```   
 To update the database, you can also simply run:
    ```bash
    dotnet ef database update
