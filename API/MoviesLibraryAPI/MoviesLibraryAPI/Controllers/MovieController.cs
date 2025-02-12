@@ -30,11 +30,11 @@ namespace MoviesLibraryAPI.Controllers
             _context.Movies.Add(movie);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMovieById", new { id = movie.Id }, movie);
+            return CreatedAtAction(nameof(GetMovie), new { id = movie.Id }, movie);
         }
 
         // GET: api/movies/id    
-        [HttpGet("{id}", Name = "GetMovieById")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Movie>> GetMovie(int id)
         {
             var movie = await _context.Movies.FindAsync(id);

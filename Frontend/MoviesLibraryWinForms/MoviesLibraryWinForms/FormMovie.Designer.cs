@@ -47,7 +47,7 @@
             // 
             txtYear.Location = new Point(30, 164);
             txtYear.Name = "txtYear";
-            txtYear.Size = new Size(73, 23);
+            txtYear.Size = new Size(58, 23);
             txtYear.TabIndex = 3;
             // 
             // lblTitle

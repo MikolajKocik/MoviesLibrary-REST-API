@@ -6,7 +6,7 @@ namespace MoviesLibraryWinForms
     public partial class Form1 : Form
     {
         private readonly HttpClient _httpClient;
-        private const string ApiUrl = "https://localhost:7295";
+        private const string ApiUrl = "https://localhost:7295/api/movies";
 
         public Form1()
         {
@@ -26,6 +26,21 @@ namespace MoviesLibraryWinForms
             {
                 var movies = await _httpClient.GetFromJsonAsync<List<Movie>>(ApiUrl);
                 dataGridViewMovies.DataSource = movies;
+
+                if (dataGridViewMovies.Columns["Id"] != null)
+                {
+                    dataGridViewMovies.Columns["Id"].Visible = false;
+                }
+
+                if (dataGridViewMovies.Columns["EditButton"] != null)
+                {
+                    dataGridViewMovies.Columns["EditButton"].DisplayIndex = dataGridViewMovies.Columns.Count - 1;
+                }
+
+                if (dataGridViewMovies.Columns["DeleteButton"] != null)
+                {
+                    dataGridViewMovies.Columns["DeleteButton"].DisplayIndex = dataGridViewMovies.Columns.Count - 1;
+                }
             }
             catch (Exception ex)
             {
