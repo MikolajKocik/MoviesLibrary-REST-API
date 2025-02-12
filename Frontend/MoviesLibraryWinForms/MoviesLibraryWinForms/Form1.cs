@@ -6,7 +6,7 @@ namespace MoviesLibraryWinForms
     public partial class Form1 : Form
     {
         private readonly HttpClient _httpClient;
-        private const string ApiUrl = "https://localhost:7295/api/movies";
+        private const string ApiUrl = "https://localhost:7295/api/movies"; // connect with API 
 
         public Form1()
         {
@@ -20,10 +20,15 @@ namespace MoviesLibraryWinForms
             await LoadMoviesAsync();
         }
 
+        /// <summary>
+        /// Load all data from API - get movies endpoint
+        /// </summary>
+     
         private async Task LoadMoviesAsync()
         {
             try
             {
+                // get data from API 
                 var movies = await _httpClient.GetFromJsonAsync<List<Movie>>(ApiUrl);
                 dataGridViewMovies.DataSource = movies;
 
@@ -31,6 +36,8 @@ namespace MoviesLibraryWinForms
                 {
                     dataGridViewMovies.Columns["Id"].Visible = false;
                 }
+
+                // set buttons edit and delete next to list elements
 
                 if (dataGridViewMovies.Columns["EditButton"] != null)
                 {
@@ -48,6 +55,10 @@ namespace MoviesLibraryWinForms
             }
         }
 
+        /// <summary>
+        /// Add new movie and send request to API - post endpoint
+        /// </summary>
+     
         private async void btnAdd_Click(object sender, EventArgs e)
         {
             using (var modalForm = new FormMovie())
@@ -55,6 +66,8 @@ namespace MoviesLibraryWinForms
                 if (modalForm.ShowDialog() == DialogResult.OK)
                 {
                     var newMovie = modalForm.Movie;
+
+                    // send request to API to add movie
                     var response = await _httpClient.PostAsJsonAsync(ApiUrl, newMovie);
                     if (response.IsSuccessStatusCode)
                     {
@@ -67,6 +80,10 @@ namespace MoviesLibraryWinForms
                 }
             }
         }
+
+        /// <summary>
+        /// Set DataGridViewButtons and adding to column 
+        /// </summary>
 
         private void SetupDataGridViewButtons()
         {
@@ -96,6 +113,10 @@ namespace MoviesLibraryWinForms
                 dataGridViewMovies.Columns.Add(deleteButtonColumn);
             }
         }
+
+        /// <summary>
+        /// The configuration of main window, where user can edit or delete data
+        /// </summary>
 
         private async void dataGridViewMovies_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -133,8 +154,11 @@ namespace MoviesLibraryWinForms
             {
                 var confirm = MessageBox.Show("Are you sure that you want to delete the data?", "Confirmation", MessageBoxButtons.YesNo);
 
+                // note about MessageBox.YesNo: name of button depends on operating system language
+
                 if (confirm == DialogResult.Yes)
                 {
+                    // delete data and send request to API
                     var response = await _httpClient.DeleteAsync($"{ApiUrl}/{movie.Id}");
 
                     if (response.IsSuccessStatusCode)
