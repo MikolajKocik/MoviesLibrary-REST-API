@@ -5,7 +5,10 @@ This repository contains a simple Movies Library management application built us
 ## How to Run
 
 Copy the repository:
-
+```bash
+git clone https://github.com/MikolajKocik/MoviesLibrary-REST-API.git
+```
+If you want run a project in Visual Studio:
 ```bash
 https://github.com/MikolajKocik/MoviesLibrary-REST-API.git
 ```
@@ -36,8 +39,8 @@ To update the database, you can also simply run:
 1. **Open the Frontend Project**
   - Open the Windows Forms project in Visual Studio.
     
-2. Build and Run
-   Run the application, you can press 'F5' or click on button
+2. **Run a project**
+    - Run the project in visual studio, you can press 'F5' or click on button
   
    You can also run the project in console:
    ```bash
@@ -47,3 +50,7 @@ To update the database, you can also simply run:
   - **Add:** Click the "Add" button to open a modal dialog (FormMovie) for adding a new movie.
   - **Edit:** Each row in the DataGridView has an "Edit" button. Clicking it opens the modal dialog pre-filled with the movie data for editing.
   - **Delete:** Each row also has a "Delete" button that, after confirmation, removes the movie.
+
+### Requirements:
+- .NET 8 SDK
+- Visual Studio 2022 
