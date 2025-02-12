@@ -1,13 +1,13 @@
-﻿namespace MoviesLibraryAPI.Models
+﻿namespace MoviesLibraryWinForms.Models
 {
     public class Movie
     {
         private int id;
         private string title = default!;
-        private int year;
+        private int year; 
 
-        public int Id
-        {
+        public int Id 
+        { 
             get { return id; }
             set { id = value; }
         }

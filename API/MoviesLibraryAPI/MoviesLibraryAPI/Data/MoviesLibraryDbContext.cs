@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MoviesLibraryAPI.Entities;
+using MoviesLibraryAPI.Models;
 
 namespace MoviesLibraryAPI.Data
 {
