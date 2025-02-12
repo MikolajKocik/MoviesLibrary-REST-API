@@ -15,6 +15,7 @@ namespace MoviesLibraryWinForms
         {
             Movie = movie;
             txtTitle.Text = movie.Title;
+            txtYear.Text = movie.Year.ToString();
 
         }
 

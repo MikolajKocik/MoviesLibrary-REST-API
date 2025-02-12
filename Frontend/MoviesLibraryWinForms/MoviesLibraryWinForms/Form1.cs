@@ -108,10 +108,14 @@ namespace MoviesLibraryWinForms
 
             if (columnName == "EditButton")
             {
-                using (FormMovie modalForm = new FormMovie())
+                using (FormMovie modalForm = new FormMovie(movie))
                 {
                     if (modalForm.ShowDialog() == DialogResult.OK)
                     {
+                        // after closing the form, data is up to date
+                        var updateMovie = modalForm.Movie;
+
+                        // send changes to API database 
                         var response = await _httpClient.PutAsJsonAsync($"{ApiUrl}/{movie.Id}", movie);
 
                         if (response.IsSuccessStatusCode)
