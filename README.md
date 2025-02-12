@@ -4,11 +4,11 @@ This repository contains a simple Movies Library management application built us
 
 ## How to Run
 
-Copy the repository:
+Copy the repository to terminal:
 ```bash
 git clone https://github.com/MikolajKocik/MoviesLibrary-REST-API.git
 ```
-If you want run a project in Visual Studio:
+If you want run a project in Visual Studio, use option 'Clone the repository' and then:
 ```bash
 https://github.com/MikolajKocik/MoviesLibrary-REST-API.git
 ```
