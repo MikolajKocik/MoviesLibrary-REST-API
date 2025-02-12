@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace MoviesLibraryWinForms
 {
     internal static class Program

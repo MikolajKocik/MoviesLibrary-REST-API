@@ -1,5 +1,4 @@
 ﻿using MoviesLibraryWinForms.Models;
-using System.Windows.Forms.VisualStyles;
 
 namespace MoviesLibraryWinForms
 {
