@@ -38,7 +38,6 @@ TestResults/
 # Pliki konfiguracyjne
 *.config
 *.ini
-*.json
 
 # Pliki lokalne
 .env
