@@ -2,8 +2,26 @@
 {
     public class Movie
     {
-        public int Id { get; set; }
-        public string Title { get; set; } = default!;
-        public int Year { get; set; } = default!;
+        private int id;
+        private string title = default!;
+        private int year;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
+
+        public int Year
+        {
+            get { return year; }
+            set { year = value; }
+        }
     }
 }
