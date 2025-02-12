@@ -28,15 +28,11 @@ Release/
 *.suo
 *.sdf
 
-# Pliki NuGet
-packages/
-
 # Pliki testowe
 TestResults/
 *.trx
 
 # Pliki konfiguracyjne
-*.config
 *.ini
 
 # Pliki lokalne
