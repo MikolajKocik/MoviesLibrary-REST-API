@@ -35,7 +35,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(44, 93);
+            btnAdd.Location = new Point(44, 37);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(101, 33);
             btnAdd.TabIndex = 1;
@@ -45,9 +45,9 @@
             // 
             // dataGridViewMovies
             // 
-            dataGridViewMovies.Location = new Point(44, 154);
+            dataGridViewMovies.Location = new Point(44, 107);
             dataGridViewMovies.Name = "dataGridViewMovies";
-            dataGridViewMovies.Size = new Size(737, 344);
+            dataGridViewMovies.Size = new Size(736, 367);
             dataGridViewMovies.TabIndex = 2;
             dataGridViewMovies.CellContentClick += dataGridViewMovies_CellContentClick;
             // 

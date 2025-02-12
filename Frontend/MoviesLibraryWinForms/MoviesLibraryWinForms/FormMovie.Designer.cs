@@ -32,6 +32,8 @@
             txtYear = new TextBox();
             lblTitle = new Label();
             lblYear = new Label();
+            btnOk = new Button();
+            btnCancel = new Button();
             SuspendLayout();
             // 
             // txtTitle
@@ -68,11 +70,33 @@
             lblYear.TabIndex = 5;
             lblYear.Text = "Year";
             // 
+            // btnOk
+            // 
+            btnOk.Location = new Point(30, 229);
+            btnOk.Name = "btnOk";
+            btnOk.Size = new Size(75, 23);
+            btnOk.TabIndex = 6;
+            btnOk.Text = "Ok";
+            btnOk.UseVisualStyleBackColor = true;
+            btnOk.Click += btnOk_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(140, 229);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 7;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // FormMovie
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(418, 283);
+            Controls.Add(btnCancel);
+            Controls.Add(btnOk);
             Controls.Add(lblYear);
             Controls.Add(lblTitle);
             Controls.Add(txtYear);
@@ -88,5 +112,7 @@
         private TextBox txtYear;
         private Label lblTitle;
         private Label lblYear;
+        private Button btnOk;
+        private Button btnCancel;
     }
 }

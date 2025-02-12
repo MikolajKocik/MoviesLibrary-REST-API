@@ -18,7 +18,15 @@ namespace MoviesLibraryWinForms
 
         }
 
+        private void btnOk_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
