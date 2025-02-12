@@ -5,7 +5,7 @@ using MoviesLibraryAPI.Entities;
 
 namespace MoviesLibraryAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/movies")]
     [ApiController]
     public class MovieController : ControllerBase
     {
@@ -25,16 +25,16 @@ namespace MoviesLibraryAPI.Controllers
 
         // POST: api/movies
         [HttpPost]
-        public async Task<ActionResult<Movie>> AddMovie(Movie movie)
+        public async Task<ActionResult<Movie>> AddMovie([FromBody] Movie movie)
         {
             _context.Movies.Add(movie);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetMovie), new { id = movie.Id }, movie);
+            return CreatedAtAction("GetMovieById", new { id = movie.Id }, movie);
         }
 
         // GET: api/movies/id    
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetMovieById")]
         public async Task<ActionResult<Movie>> GetMovie(int id)
         {
             var movie = await _context.Movies.FindAsync(id);
@@ -48,7 +48,7 @@ namespace MoviesLibraryAPI.Controllers
 
         // PUT: api/movies/id
         [HttpPut("{id}")]
-        public async Task<ActionResult<Movie>> EditMovie(int id, Movie movie)
+        public async Task<ActionResult<Movie>> EditMovie(int id, [FromBody] Movie movie)
         {
             if (id != movie.Id)
             {

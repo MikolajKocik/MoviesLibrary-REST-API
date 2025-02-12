@@ -1,6 +1,36 @@
-@MoviesLibraryAPI_HostAddress = http://localhost:5011
+@Port = https://localhost
+@Host = 7295
+@MoviesLibraryAPI_HostAddress = {{Port}}:{{Host}}
 
-GET {{MoviesLibraryAPI_HostAddress}}/weatherforecast/
+GET {{MoviesLibraryAPI_HostAddress}}/api/movies
 Accept: application/json
+
+###
+
+POST {{MoviesLibraryAPI_HostAddress}}/api/movies
+Content-Type: application/json
+
+{
+  //Movie
+}
+
+###
+
+@id=0
+DELETE {{MoviesLibraryAPI_HostAddress}}/api/movies/{{id}}
+
+###
+
+GET {{MoviesLibraryAPI_HostAddress}}/api/movies/{{id}}
+Accept: application/json
+
+###
+
+PUT {{MoviesLibraryAPI_HostAddress}}/api/movies/{{id}}
+Content-Type: application/json
+
+{
+  //Movie
+}
 
 ###
