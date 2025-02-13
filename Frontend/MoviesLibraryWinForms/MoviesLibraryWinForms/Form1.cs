@@ -7,7 +7,7 @@ namespace MoviesLibraryWinForms
     public partial class Form1 : Form
     {
         private readonly HttpClient _httpClient;
-        private string ApiUrl = ConfigurationManager.AppSettings["MoviesLibraryAPI:BaseUrl"]!; // connect with API 
+        private readonly string _apiUrl;
 
         /// <summary>
         /// Initializes HttpClient and setup for edit/delete buttons 
@@ -17,6 +17,8 @@ namespace MoviesLibraryWinForms
             InitializeComponent();
             SetupDataGridViewButtons();
             _httpClient = new HttpClient();
+            _apiUrl = ConfigurationManager.AppSettings["MoviesLibraryAPI:BaseUrl"] ??
+                throw new Exception("BaseUrl is missing in config."); // connect with API 
         }
 
         /// <summary>
@@ -37,7 +39,7 @@ namespace MoviesLibraryWinForms
             try
             {
                 // get data from API 
-                var movies = await _httpClient.GetFromJsonAsync<List<Movie>>(ApiUrl);
+                var movies = await _httpClient.GetFromJsonAsync<List<Movie>>(_apiUrl);
                 dataGridViewMovies.DataSource = movies;
 
                 if (dataGridViewMovies.Columns["Id"] != null)
@@ -76,7 +78,7 @@ namespace MoviesLibraryWinForms
                     var newMovie = modalForm.Movie;
 
                     // send request to API to add movie
-                    var response = await _httpClient.PostAsJsonAsync(ApiUrl, newMovie);
+                    var response = await _httpClient.PostAsJsonAsync(_apiUrl, newMovie);
                     if (response.IsSuccessStatusCode)
                     {
                         await LoadMoviesAsync();
@@ -145,7 +147,7 @@ namespace MoviesLibraryWinForms
                         var updateMovie = modalForm.Movie;
 
                         // send changes to API database 
-                        var response = await _httpClient.PutAsJsonAsync($"{ApiUrl}/{movie.Id}", movie);
+                        var response = await _httpClient.PutAsJsonAsync($"{_apiUrl}/{movie.Id}", movie);
 
                         if (response.IsSuccessStatusCode)
                         {
@@ -167,7 +169,7 @@ namespace MoviesLibraryWinForms
                 if (confirm == DialogResult.Yes)
                 {
                     // delete data and send request to API
-                    var response = await _httpClient.DeleteAsync($"{ApiUrl}/{movie.Id}");
+                    var response = await _httpClient.DeleteAsync($"{_apiUrl}/{movie.Id}");
 
                     if (response.IsSuccessStatusCode)
                     {
