@@ -53,4 +53,6 @@ To update the database, you can also simply run:
 
 ### Requirements:
 - .NET 8 SDK
-- Visual Studio 2022 
+- Visual Studio 2022
+- Web Application Development workload installed in VS
+- Desktop Development workload installed in VS
