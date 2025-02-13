@@ -1,4 +1,4 @@
-# Pliki tymczasowe i pliki kompilacji
+# Temporary files and compilation files
 *.obj
 *.o
 *.exe
@@ -13,13 +13,13 @@
 *.log
 *.log*
 
-# Foldery kompilacji
+# Build Folders
 bin/
 obj/
 Debug/
 Release/
 
-# Pliki specyficzne dla Visual Studio
+# Visual Studio Specific Files
 .vs/
 *.csproj.user
 *.vcxproj.user
@@ -28,13 +28,13 @@ Release/
 *.suo
 *.sdf
 
-# Pliki testowe
+# Test files
 TestResults/
 *.trx
 
-# Pliki konfiguracyjne
+# Configuration files
 *.ini
 
-# Pliki lokalne
+# Local files
 .env
 secrets.json
